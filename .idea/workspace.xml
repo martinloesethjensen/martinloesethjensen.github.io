@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff9e4d2f-b72a-4507-831e-ff21c33505ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/certificates/certificates.html" beforeDir="false" afterPath="$PROJECT_DIR$/certificates/certificates.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -84,20 +85,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="109" selection-start-line="3" selection-start-column="109" selection-end-line="3" selection-end-column="109" />
+            <state relative-caret-position="54">
+              <caret line="67" column="319" selection-start-line="67" selection-start-column="319" selection-end-line="67" selection-end-column="319" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/certificates/certificates.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="109" selection-start-line="3" selection-start-column="109" selection-end-line="3" selection-end-column="109" />
+            <state relative-caret-position="190">
+              <caret line="79" column="319" selection-start-line="79" selection-start-column="319" selection-end-line="79" selection-end-column="319" />
             </state>
           </provider>
         </entry>
@@ -117,8 +118,8 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/certificates/certificates.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -223,7 +224,7 @@
       <workItem from="1536215747021" duration="291000" />
       <workItem from="1536854736180" duration="1338000" />
       <workItem from="1537166568889" duration="878000" />
-      <workItem from="1537785884286" duration="491000" />
+      <workItem from="1537785884286" duration="737000" />
     </task>
     <task id="LOCAL-00001" summary="Added link to my resume on resume.io">
       <created>1534950259153</created>
@@ -354,17 +355,17 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../KEA - Datamatiker/GitHub/EasyDecipherTheSeven/src/com/company/jdhjdjdj.java" />
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/certificates/certificates.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="109" selection-start-line="3" selection-start-column="109" selection-end-line="3" selection-end-column="109" />
+        <state relative-caret-position="190">
+          <caret line="79" column="319" selection-start-line="79" selection-start-column="319" selection-end-line="79" selection-end-column="319" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/certificates/certificates.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="109" selection-start-line="3" selection-start-column="109" selection-end-line="3" selection-end-column="109" />
+        <state relative-caret-position="54">
+          <caret line="67" column="319" selection-start-line="67" selection-start-column="319" selection-end-line="67" selection-end-column="319" />
         </state>
       </provider>
     </entry>
