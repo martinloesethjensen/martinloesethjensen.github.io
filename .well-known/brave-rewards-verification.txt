@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: martinjensen.tech
+Token: b826ccf8db8ff1a09fd744a5a5da1dd7b718a43cca1fcd743ed764c2f072398e
