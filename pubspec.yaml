@@ -1,0 +1,20 @@
+name: martin_portfolio
+description: Martin L. Jensen — Personal Portfolio & CV
+version: 0.0.1
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  jaspr: ^0.22.3
+  jaspr_router: ^0.8.1
+  pdf: ^3.11.3
+
+dev_dependencies:
+  build_runner: ^2.10.0
+  build_web_compilers: ^4.4.14
+  jaspr_builder: ^0.22.3
+  lints: ^5.0.0
+
+jaspr:
+  mode: static
