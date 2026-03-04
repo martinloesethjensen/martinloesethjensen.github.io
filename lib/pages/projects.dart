@@ -73,10 +73,10 @@ class Projects extends StatelessComponent {
     ]);
   }
 
-  Component _buildCard(_Project project, String icon) {
+  Component _buildCard(_Project project) {
     return div(classes: 'project-card', [
       div(classes: 'project-card-header', [
-        span(classes: 'project-icon', [.text(icon)]),
+        span(classes: 'project-icon', [.text(project.icon)]),
         if (project.comingSoon)
           span(classes: 'project-badge', [.text('Coming soon')]),
       ]),
