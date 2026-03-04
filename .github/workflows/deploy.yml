@@ -30,9 +30,6 @@ jobs:
       - name: Install dependencies
         run: dart pub get
 
-      - name: Generate CV PDF
-        run: dart run bin/generate_cv.dart
-
       - name: Build static site
         run: jaspr build
 
