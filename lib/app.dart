@@ -32,7 +32,7 @@ class App extends StatelessComponent {
       ]),
       footer(classes: 'site-footer', [
         div(classes: 'footer-inner', [
-          p([.text('© 2026 Martin L, Jensen · Copenhagen')]),
+          p([.text('© 2026 Martin L. Jensen · Copenhagen')]),
         ]),
       ]),
     ]);
