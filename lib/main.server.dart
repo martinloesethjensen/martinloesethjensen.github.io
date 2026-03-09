@@ -40,7 +40,10 @@ void main() {
           fontWeight: .w700,
         ),
         css('p').styles(margin: .zero),
-        css('ul, ol').styles(padding: .only(left: 1.5.rem), margin: .zero),
+        css('ul, ol').styles(
+          padding: .only(left: 1.5.rem),
+          margin: .zero,
+        ),
         css('a').styles(
           color: primaryColor,
           textDecoration: TextDecoration(line: .none),

@@ -23,10 +23,7 @@ class Header extends StatelessComponent {
           ])
             a(
               href: route.path,
-              classes:
-                  activePath == route.path
-                      ? 'nav-link nav-link--active'
-                      : 'nav-link',
+              classes: activePath == route.path ? 'nav-link nav-link--active' : 'nav-link',
               [.text(route.label)],
             ),
         ]),

@@ -33,10 +33,10 @@ const _projects = [
     languageColor: '#f05138',
     icon: '⛩️',
   ),
+
   _Project(
     title: 'AltStore Source',
-    description:
-        'A personal AltStore source for distributing and sideloading iOS apps — no jailbreak required.',
+    description: 'A personal AltStore source for distributing and sideloading iOS apps — no jailbreak required.',
     url: 'https://github.com/martinloesethjensen/altstore-source',
     language: 'JSON',
     languageColor: '#292929',
@@ -98,8 +98,7 @@ class Projects extends StatelessComponent {
       div(classes: 'card-body', [
         div(classes: 'card-header-row', [
           span(classes: 'project-icon', [.text(project.icon)]),
-          if (project.comingSoon)
-            span(classes: 'project-badge', [.text('coming soon')]),
+          if (project.comingSoon) span(classes: 'project-badge', [.text('coming soon')]),
         ]),
         div(classes: 'project-name-line', [
           span(classes: 'proj-chevron', [.text('> ')]),
@@ -142,50 +141,42 @@ class Projects extends StatelessComponent {
     ),
 
     // Page hero / header
-    css('.projects-hero').styles(
-      display: .flex,
-      flexDirection: .column,
-      gap: Gap.all(0.5.rem),
-    ),
+    css(
+      '.projects-hero',
+    ).styles(display: .flex, flexDirection: .column, gap: Gap.all(0.5.rem)),
     css('.proj-term-line').styles(display: .flex, alignItems: .center),
-    css('.proj-ps1').styles(
-      color: termGreen,
-      fontWeight: .w700,
-      fontSize: 1.125.rem,
-    ),
+    css(
+      '.proj-ps1',
+    ).styles(color: termGreen, fontSize: 1.125.rem, fontWeight: .w700),
     css('.proj-cmd').styles(color: termText, fontSize: 1.125.rem),
     css('.projects-subtitle').styles(padding: .only(left: 0.125.rem)),
     css('.proj-comment').styles(color: termComment, fontSize: 0.9375.rem),
 
     // Grid
-    css('.projects-grid').styles(
-      display: .flex,
-      flexWrap: .wrap,
-      gap: Gap.all(1.5.rem),
-    ),
+    css(
+      '.projects-grid',
+    ).styles(display: .flex, flexWrap: .wrap, gap: Gap.all(1.5.rem)),
 
     // Card
     css('.project-card').styles(
       display: .flex,
       width: 340.px,
-      flexDirection: .column,
       radius: .circular(8.px),
+      flexDirection: .column,
       backgroundColor: termCard,
     ),
 
     // Card title bar
     css('.card-titlebar').styles(
       display: .flex,
-      alignItems: .center,
       padding: .symmetric(horizontal: 0.875.rem, vertical: 0.625.rem),
-      backgroundColor: termTitlebar,
-      gap: Gap.all(0.625.rem),
-    ),
-    css('.card-dots').styles(
-      display: .flex,
       alignItems: .center,
-      gap: Gap.all(0.3125.rem),
+      gap: Gap.all(0.625.rem),
+      backgroundColor: termTitlebar,
     ),
+    css(
+      '.card-dots',
+    ).styles(display: .flex, alignItems: .center, gap: Gap.all(0.3125.rem)),
     css('.card-dot').styles(
       display: .inlineBlock,
       width: 10.px,
@@ -195,10 +186,7 @@ class Projects extends StatelessComponent {
     css('.card-dot--red').styles(backgroundColor: const Color('#ff5f57')),
     css('.card-dot--yellow').styles(backgroundColor: const Color('#febc2e')),
     css('.card-dot--green').styles(backgroundColor: const Color('#28c840')),
-    css('.card-wintitle').styles(
-      color: termMuted,
-      fontSize: 0.75.rem,
-    ),
+    css('.card-wintitle').styles(color: termMuted, fontSize: 0.75.rem),
 
     // Card body
     css('.card-body').styles(
@@ -223,32 +211,23 @@ class Projects extends StatelessComponent {
       fontWeight: .w500,
       backgroundColor: tagBg,
     ),
-    css('.project-name-line').styles(
-      display: .flex,
-      alignItems: .center,
-    ),
+    css('.project-name-line').styles(display: .flex, alignItems: .center),
     css('.proj-chevron').styles(color: termGreen, fontWeight: .w700),
-    css('.project-name').styles(
-      color: termText,
-      fontSize: 1.rem,
-      fontWeight: .w600,
-    ),
-    css('.project-description').styles(
-      flex: Flex(grow: 1),
-      color: termMuted,
-      fontSize: 0.875.rem,
-    ),
+    css(
+      '.project-name',
+    ).styles(color: termText, fontSize: 1.rem, fontWeight: .w600),
+    css(
+      '.project-description',
+    ).styles(flex: Flex(grow: 1), color: termMuted, fontSize: 0.875.rem),
     css('.project-card-footer').styles(
       display: .flex,
       padding: .only(top: 0.5.rem),
       justifyContent: .spaceBetween,
       alignItems: .center,
     ),
-    css('.project-lang').styles(
-      display: .flex,
-      alignItems: .center,
-      gap: Gap.all(0.375.rem),
-    ),
+    css(
+      '.project-lang',
+    ).styles(display: .flex, alignItems: .center, gap: Gap.all(0.375.rem)),
     css('.lang-dot').styles(
       display: .inlineBlock,
       width: 10.px,
@@ -276,9 +255,8 @@ class Projects extends StatelessComponent {
       textDecoration: TextDecoration(line: .none),
       backgroundColor: tagBg,
     ),
-    css('.github-profile-btn:hover').styles(
-      color: termBg,
-      backgroundColor: termGreen,
-    ),
+    css(
+      '.github-profile-btn:hover',
+    ).styles(color: termBg, backgroundColor: termGreen),
   ];
 }
