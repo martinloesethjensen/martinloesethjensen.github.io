@@ -107,12 +107,17 @@ class TerminalCss {
     css('.term-btn--dl:hover').styles(color: termBg, backgroundColor: termCyan),
 
     // Blinking cursor
+    css.keyframes('blink', {
+      '0%, 100%': Styles(opacity: 1),
+      '50%': Styles(opacity: 0),
+    }),
     css('.term-cursor').styles(
       display: .inlineBlock,
       width: 9.px,
       height: 1.125.rem,
       margin: .only(left: 0.25.rem),
       backgroundColor: termGreen,
+      raw: {'animation': 'blink 1s step-end infinite'},
     ),
   ];
 }

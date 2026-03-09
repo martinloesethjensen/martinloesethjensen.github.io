@@ -53,19 +53,19 @@ class Terminal extends StatelessComponent {
       // Terminal body
       div(classes: 'term-body', [
         // whoami
-        div(classes: 'term-line', [
+        div(classes: 'term-line prompt-line', [
           span(classes: 'term-ps1', [.text('\$')]),
           span(classes: 'term-cmd', [.text(' whoami')]),
         ]),
         div(classes: 'term-output term-output--name', [.text(name)]),
         // cat role.txt
-        div(classes: 'term-line', [
+        div(classes: 'term-line prompt-line', [
           span(classes: 'term-ps1', [.text('\$')]),
           span(classes: 'term-cmd', [.text(' cat role.txt')]),
         ]),
         div(classes: 'term-output term-output--role', [.text(role)]),
         // cat contact.json
-        div(classes: 'term-line', [
+        div(classes: 'term-line prompt-line', [
           span(classes: 'term-ps1', [.text('\$')]),
           span(classes: 'term-cmd', [.text(' cat contact.json')]),
         ]),
@@ -99,7 +99,7 @@ class Terminal extends StatelessComponent {
           span(classes: 'term-punct', [.text('}')]),
         ]),
         // ls links/
-        div(classes: 'term-line', [
+        div(classes: 'term-line prompt-line', [
           span(classes: 'term-ps1', [.text('\$')]),
           span(classes: 'term-cmd', [.text(' ls links/')]),
         ]),
@@ -113,7 +113,7 @@ class Terminal extends StatelessComponent {
             ),
         ]),
         // Cursor
-        div(classes: 'term-line term-line--last', [
+        div(classes: 'term-line term-line--last prompt-line', [
           span(classes: 'term-ps1', [.text('\$')]),
           span(classes: 'term-cursor', []),
         ]),

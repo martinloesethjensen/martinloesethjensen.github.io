@@ -54,7 +54,7 @@ class Projects extends StatelessComponent {
       div(classes: 'projects-inner', [
         // Page header as terminal prompt
         div(classes: 'projects-hero', [
-          div(classes: 'proj-term-line', [
+          div(classes: 'proj-term-line prompt-line', [
             span(classes: 'proj-ps1', [.text('\$')]),
             span(classes: 'proj-cmd', [.text(' ls ~/projects/')]),
           ]),
@@ -100,8 +100,8 @@ class Projects extends StatelessComponent {
           span(classes: 'project-icon', [.text(project.icon)]),
           if (project.comingSoon) span(classes: 'project-badge', [.text('coming soon')]),
         ]),
-        div(classes: 'project-name-line', [
-          span(classes: 'proj-chevron', [.text('> ')]),
+        div(classes: 'project-name-line prompt-line', [
+          span(classes: 'proj-chevron', [.text('>')]),
           h2(classes: 'project-name', [.text(project.title)]),
         ]),
         p(classes: 'project-description', [.text(project.description)]),
