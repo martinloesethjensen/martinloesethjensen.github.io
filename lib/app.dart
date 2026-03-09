@@ -3,8 +3,8 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'components/header.dart';
-import 'pages/home.dart';
-import 'pages/projects.dart';
+import 'pages/home/home.dart';
+import 'pages/projects/projects.dart';
 import 'theme.dart';
 
 class App extends StatelessComponent {

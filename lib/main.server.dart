@@ -13,6 +13,7 @@ void main() {
   runApp(
     Document(
       title: 'Martin L. Jensen — Senior Mobile Developer',
+      head: [link(href: 'favicon.svg', rel: 'icon', type: 'image/svg+xml')],
       meta: {
         'viewport': 'width=device-width, initial-scale=1.0',
         'description':
@@ -34,11 +35,9 @@ void main() {
           ]),
           backgroundColor: lightBg,
         ),
-        css('h1, h2, h3, h4, h5, h6').styles(
-          margin: .zero,
-          color: darkColor,
-          fontWeight: .w700,
-        ),
+        css(
+          'h1, h2, h3, h4, h5, h6',
+        ).styles(margin: .zero, color: darkColor, fontWeight: .w700),
         css('p').styles(margin: .zero),
         css('ul, ol').styles(
           padding: .only(left: 1.5.rem),

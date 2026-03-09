@@ -6,8 +6,8 @@
 
 import 'package:jaspr/server.dart';
 import 'package:martin_portfolio/components/header.dart' as _header;
-import 'package:martin_portfolio/pages/home.dart' as _home;
-import 'package:martin_portfolio/pages/projects.dart' as _projects;
+import 'package:martin_portfolio/pages/home/home.dart' as _home;
+import 'package:martin_portfolio/pages/projects/projects.dart' as _projects;
 import 'package:martin_portfolio/app.dart' as _app;
 
 /// Default [ServerOptions] for use with your Jaspr project.
