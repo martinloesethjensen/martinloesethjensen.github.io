@@ -230,15 +230,15 @@ class Home extends StatelessComponent {
     // Terminal window container
     css(
       '.term-window',
-    ).styles(backgroundColor: termCard, radius: .circular(8.px)),
+    ).styles(radius: .circular(8.px), backgroundColor: termCard),
 
     // Title bar
     css('.term-titlebar').styles(
       display: .flex,
-      alignItems: .center,
       padding: .symmetric(horizontal: 1.rem, vertical: 0.75.rem),
-      backgroundColor: termTitlebar,
+      alignItems: .center,
       gap: Gap.all(0.75.rem),
+      backgroundColor: termTitlebar,
     ),
     css(
       '.term-dots',
@@ -263,33 +263,33 @@ class Home extends StatelessComponent {
     ),
     css('.term-line').styles(
       display: .flex,
-      alignItems: .center,
       padding: .only(top: 0.875.rem),
+      alignItems: .center,
     ),
     css('.term-line--last').styles(
       padding: .only(top: 0.875.rem, bottom: 0.25.rem),
     ),
     css(
       '.term-ps1',
-    ).styles(color: termGreen, fontWeight: .w700, fontSize: 1.rem),
+    ).styles(color: termGreen, fontSize: 1.rem, fontWeight: .w700),
     css('.term-cmd').styles(color: termText, fontSize: 0.9375.rem),
 
     // Output lines
     css('.term-output').styles(
+      padding: .only(left: 1.25.rem, top: 0.125.rem),
       color: termSubText,
       fontSize: 0.9375.rem,
-      padding: .only(left: 1.25.rem, top: 0.125.rem),
     ),
     css('.term-output--name').styles(
+      padding: .only(left: 1.25.rem, top: 0.25.rem, bottom: 0.25.rem),
       color: termGreen,
       fontSize: 1.625.rem,
       fontWeight: .w700,
-      padding: .only(left: 1.25.rem, top: 0.25.rem, bottom: 0.25.rem),
     ),
     css('.term-output--role').styles(
+      padding: .only(left: 1.25.rem, top: 0.125.rem, bottom: 0.25.rem),
       color: termCyan,
       fontSize: 1.rem,
-      padding: .only(left: 1.25.rem, top: 0.125.rem, bottom: 0.25.rem),
     ),
     css('.term-output--json').styles(
       padding: .only(left: 2.5.rem, top: 0.125.rem),
@@ -308,10 +308,10 @@ class Home extends StatelessComponent {
     // Links row
     css('.term-links-row').styles(
       display: .flex,
+      padding: .only(left: 1.25.rem, top: 0.375.rem, bottom: 0.25.rem),
       flexWrap: .wrap,
       alignItems: .center,
       gap: Gap.all(0.625.rem),
-      padding: .only(left: 1.25.rem, top: 0.375.rem, bottom: 0.25.rem),
     ),
     css('.term-btn').styles(
       display: .inlineBlock,
@@ -332,8 +332,8 @@ class Home extends StatelessComponent {
       display: .inlineBlock,
       width: 9.px,
       height: 1.125.rem,
-      backgroundColor: termGreen,
       margin: .only(left: 0.25.rem),
+      backgroundColor: termGreen,
     ),
 
     // CV content wrapper
@@ -380,10 +380,10 @@ class Home extends StatelessComponent {
       '.exp-company',
     ).styles(color: termText, fontSize: 1.rem, fontWeight: .w600),
     css('.exp-role').styles(
+      padding: .only(left: 1.rem),
       color: termMuted,
       fontSize: 0.875.rem,
       fontWeight: .w400,
-      padding: .only(left: 1.rem),
     ),
     css(
       '.exp-date',
