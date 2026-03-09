@@ -3,6 +3,8 @@ import 'package:jaspr/jaspr.dart';
 
 import '../../components/terminal.dart';
 import '../../data/cv_data.dart';
+import '../../models/experience.dart';
+import '../../models/skill_group.dart';
 import 'home.css.dart';
 
 class Home extends StatelessComponent {
@@ -77,7 +79,7 @@ class Home extends StatelessComponent {
     ]);
   }
 
-  Component _buildExpItem(ExperienceItem exp) {
+  Component _buildExpItem(Experience exp) {
     return div(classes: 'exp-item', [
       div(classes: 'exp-header', [
         div(classes: 'exp-title-group', [

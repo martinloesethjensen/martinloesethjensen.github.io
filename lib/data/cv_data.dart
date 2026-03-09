@@ -1,44 +1,9 @@
-class ExperienceItem {
-  final String company;
-  final String position;
-  final String location;
-  final String date;
-  final List<String> bullets;
-
-  const ExperienceItem({
-    required this.company,
-    required this.position,
-    required this.location,
-    required this.date,
-    required this.bullets,
-  });
-}
-
-class EducationItem {
-  final String institution;
-  final String degree;
-  final String area;
-  final String date;
-  final String description;
-
-  const EducationItem({
-    required this.institution,
-    required this.degree,
-    required this.area,
-    required this.date,
-    required this.description,
-  });
-}
-
-class SkillGroup {
-  final String name;
-  final List<String> tags;
-
-  const SkillGroup({required this.name, required this.tags});
-}
+import '../models/education.dart';
+import '../models/experience.dart';
+import '../models/skill_group.dart';
 
 const experiences = [
-  ExperienceItem(
+  Experience(
     company: 'Monta',
     position: 'Flutter Engineer',
     location: 'Copenhagen',
@@ -50,7 +15,7 @@ const experiences = [
       'Collaborated cross-functionally with multiple Hub engineering teams to ensure seamless feature integration.',
     ],
   ),
-  ExperienceItem(
+  Experience(
     company: 'Trifork Smart Enterprise',
     position: 'Mobility Developer',
     location: 'Copenhagen',
@@ -59,7 +24,7 @@ const experiences = [
       'Built key features into an existing B2C native Android application utilizing the SAP ERP SDK.',
     ],
   ),
-  ExperienceItem(
+  Experience(
     company: 'Dawn Health',
     position: 'Flutter Developer',
     location: 'Copenhagen',
@@ -69,7 +34,7 @@ const experiences = [
       'Spearheaded the implementation of the WEMA virtual clinic Flutter Mobile App (B2C) from inception until release, including writing a native plugin for video streaming.',
     ],
   ),
-  ExperienceItem(
+  Experience(
     company: 'Monstarlab EMEA',
     position: 'Flutter Developer',
     location: 'Copenhagen',
@@ -78,7 +43,7 @@ const experiences = [
       'Contributed to app development in an international team, successfully delivering and releasing features across multiple B2C Flutter Mobile App projects (e.g., Hoergiraffe — an interactive audio book app).',
     ],
   ),
-  ExperienceItem(
+  Experience(
     company: 'Adapt Agency',
     position: 'Student App Developer',
     location: 'Copenhagen',
@@ -90,7 +55,7 @@ const experiences = [
 ];
 
 const educations = [
-  EducationItem(
+  Education(
     institution: 'KEA — Copenhagen Business Academy',
     degree: 'B.A.',
     area: 'Software Development',
@@ -122,17 +87,11 @@ const skillGroups = [
     name: 'Architecture',
     tags: ['MVVM', 'Clean Architecture', 'Design Patterns'],
   ),
-  SkillGroup(
-    name: 'Android (Kotlin)',
-    tags: ['RxJava', 'Jetpack Compose'],
-  ),
+  SkillGroup(name: 'Android (Kotlin)', tags: ['RxJava', 'Jetpack Compose']),
   SkillGroup(name: 'iOS (Swift)', tags: ['Swift', 'UIKit', 'SwiftUI']),
   SkillGroup(
     name: 'Testing',
     tags: ['Unit tests', 'Widget tests', 'Integration tests', 'mocktail'],
   ),
-  SkillGroup(
-    name: 'CI / CD',
-    tags: ['Bitrise', 'GitHub Actions', 'Codemagic'],
-  ),
+  SkillGroup(name: 'CI / CD', tags: ['Bitrise', 'GitHub Actions', 'Codemagic']),
 ];

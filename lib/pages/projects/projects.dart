@@ -1,49 +1,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
+import '../../data/projects_data.dart';
+import '../../models/project.dart';
 import 'projects.css.dart';
-
-class _Project {
-  final String title;
-  final String description;
-  final String url;
-  final String language;
-  final String languageColor;
-  final String icon;
-  final bool comingSoon;
-
-  const _Project({
-    required this.title,
-    required this.description,
-    required this.url,
-    required this.language,
-    required this.languageColor,
-    this.icon = '📁',
-    this.comingSoon = false,
-  });
-}
-
-const _projects = [
-  _Project(
-    title: 'GenkiFlow',
-    description:
-        'An iOS app for Japanese language learning, combining JMDict dictionary data and kanji resources into a streamlined study experience.',
-    url: 'https://github.com/martinloesethjensen/genkiflow',
-    language: 'Swift',
-    languageColor: '#f05138',
-    icon: '⛩️',
-  ),
-
-  _Project(
-    title: 'AltStore Source',
-    description: 'A personal AltStore source for distributing and sideloading iOS apps — no jailbreak required.',
-    url: 'https://github.com/martinloesethjensen/altstore-source',
-    language: 'JSON',
-    languageColor: '#292929',
-    icon: '🚀',
-    comingSoon: true,
-  ),
-];
 
 class Projects extends StatelessComponent {
   const Projects({super.key});
@@ -67,7 +27,7 @@ class Projects extends StatelessComponent {
 
         // Project cards grid
         div(classes: 'projects-grid', [
-          for (final project in _projects) _buildCard(project),
+          for (final project in projectsData) _buildCard(project),
         ]),
 
         // Footer
@@ -76,14 +36,14 @@ class Projects extends StatelessComponent {
             href: 'https://github.com/martinloesethjensen',
             attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
             classes: 'github-profile-btn',
-            [.text('View all on GitHub →')],
+            [.text('View all on GitHub 🐙 →')],
           ),
         ]),
       ]),
     ]);
   }
 
-  Component _buildCard(_Project project) {
+  Component _buildCard(Project project) {
     return div(classes: 'project-card', [
       // Card title bar
       div(classes: 'card-titlebar', [
@@ -98,6 +58,13 @@ class Projects extends StatelessComponent {
       div(classes: 'card-body', [
         div(classes: 'card-header-row', [
           span(classes: 'project-icon', [.text(project.icon)]),
+          if (project.liveUrl != null)
+            a(
+              href: project.liveUrl!,
+              attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
+              classes: 'project-play-btn',
+              [.text('🕹️ play')],
+            ),
           if (project.comingSoon) span(classes: 'project-badge', [.text('coming soon')]),
         ]),
         div(classes: 'project-name-line prompt-line', [
@@ -105,6 +72,10 @@ class Projects extends StatelessComponent {
           h2(classes: 'project-name', [.text(project.title)]),
         ]),
         p(classes: 'project-description', [.text(project.description)]),
+        if (project.tags.isNotEmpty)
+          div(classes: 'project-tags', [
+            for (final tag in project.tags) span(classes: 'project-tag', [.text(tag)]),
+          ]),
         div(classes: 'project-card-footer', [
           div(classes: 'project-lang', [
             span(
@@ -114,12 +85,14 @@ class Projects extends StatelessComponent {
             ),
             span(classes: 'lang-label', [.text(project.language)]),
           ]),
-          a(
-            href: project.url,
-            attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-            classes: 'project-link',
-            [.text('view on GitHub →')],
-          ),
+          div(classes: 'project-card-actions', [
+            a(
+              href: project.url,
+              attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
+              classes: 'project-link',
+              [.text('view on GitHub 🐙 →')],
+            ),
+          ]),
         ]),
       ]),
     ]);

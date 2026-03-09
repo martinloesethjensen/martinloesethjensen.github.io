@@ -97,12 +97,28 @@ class ProjectsCss {
     css(
       '.project-description',
     ).styles(flex: Flex(grow: 1), color: termMuted, fontSize: 0.875.rem),
+    css(
+      '.project-tags',
+    ).styles(display: .flex, flexWrap: .wrap, gap: Gap.all(0.375.rem)),
+    css('.project-tag').styles(
+      display: .inlineBlock,
+      padding: .symmetric(horizontal: 0.5.rem, vertical: 0.1875.rem),
+      radius: .circular(4.px),
+      color: tagText,
+      fontSize: 0.6875.rem,
+      fontWeight: .w500,
+      backgroundColor: tagBg,
+    ),
     css('.project-card-footer').styles(
       display: .flex,
       padding: .only(top: 0.5.rem),
       justifyContent: .spaceBetween,
       alignItems: .center,
+      gap: Gap.all(0.5.rem),
     ),
+    css(
+      '.project-card-actions',
+    ).styles(display: .flex, alignItems: .center, gap: Gap.all(0.75.rem)),
     css(
       '.project-lang',
     ).styles(display: .flex, alignItems: .center, gap: Gap.all(0.375.rem)),
@@ -113,6 +129,19 @@ class ProjectsCss {
       radius: .circular(5.px),
     ),
     css('.lang-label').styles(color: termComment, fontSize: 0.8125.rem),
+    css('.project-play-btn').styles(
+      display: .inlineBlock,
+      padding: .symmetric(horizontal: 0.625.rem, vertical: 0.3125.rem),
+      radius: .circular(4.px),
+      color: termBg,
+      fontSize: 0.8125.rem,
+      fontWeight: .w600,
+      textDecoration: TextDecoration(line: .none),
+      backgroundColor: termGreen,
+    ),
+    css(
+      '.project-play-btn:hover',
+    ).styles(color: termBg, backgroundColor: termGreenBright),
     css('.project-link').styles(
       color: termGreen,
       fontSize: 0.8125.rem,
