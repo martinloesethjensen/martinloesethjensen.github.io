@@ -13,7 +13,51 @@ void main() {
   runApp(
     Document(
       title: 'Martin L. Jensen — Senior Mobile Developer',
-      head: [link(href: 'favicon.svg', rel: 'icon', type: 'image/svg+xml')],
+      head: [
+        link(href: 'favicon.svg', rel: 'icon', type: 'image/svg+xml'),
+        // Open Graph
+        meta(attributes: {'property': 'og:type', 'content': 'website'}),
+        meta(
+          attributes: {
+            'property': 'og:url',
+            'content': 'https://martinloeseth.dev',
+          },
+        ),
+        meta(
+          attributes: {
+            'property': 'og:title',
+            'content': 'Martin L. Jensen — Senior Mobile Developer',
+          },
+        ),
+        meta(
+          attributes: {
+            'property': 'og:description',
+            'content':
+                'Senior Mobile Developer specializing in Flutter with 4+ years of experience building cross-platform apps.',
+          },
+        ),
+        meta(
+          attributes: {
+            'property': 'og:site_name',
+            'content': 'Martin L. Jensen',
+          },
+        ),
+        // Twitter Card
+        meta(attributes: {'name': 'twitter:card', 'content': 'summary'}),
+        meta(
+          attributes: {
+            'name': 'twitter:title',
+            'content': 'Martin L. Jensen — Senior Mobile Developer',
+          },
+        ),
+        meta(
+          attributes: {
+            'name': 'twitter:description',
+            'content':
+                'Senior Mobile Developer specializing in Flutter with 4+ years of experience building cross-platform apps.',
+          },
+        ),
+      ],
       meta: {
         'viewport': 'width=device-width, initial-scale=1.0',
         'description':
