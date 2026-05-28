@@ -44,6 +44,42 @@ const projectsData = [
   ),
 
   Project(
+    title: 'Case POS Pay',
+    description:
+        'A minimal Android demo app integrating Softpay AppSwitch — configures a client, handles login transactions, and implements a complete payment flow via the Softpay Sandbox.',
+    languages: [ProjectLanguage(name: 'Kotlin', color: '#7F52FF')],
+    url: GitHubProjectUrl(
+      url: 'https://github.com/martinloesethjensen/case-pos-pay',
+    ),
+    icon: '💳',
+    tags: ['Android', 'Kotlin', 'Payments', 'Softpay', 'POS'],
+  ),
+
+  Project(
+    title: 'Case E-Commerce App',
+    description:
+        'A mobile-first e-commerce frontend built with Ionic and Angular, featuring product browsing by category, a shopping cart with stock validation, and a full checkout flow.',
+    languages: [ProjectLanguage(name: 'TypeScript', color: '#3178c6')],
+    url: GitHubProjectUrl(
+      url: 'https://github.com/martinloesethjensen/case-e-commerce-app',
+    ),
+    icon: '🛒',
+    tags: ['Ionic', 'Angular', 'TypeScript', 'Mobile'],
+  ),
+
+  Project(
+    title: 'Watched',
+    description:
+        'An Android app to search for movies and add them to a local watchlist, built with Jetpack Compose and following MVVM clean architecture.',
+    languages: [ProjectLanguage(name: 'Kotlin', color: '#7F52FF')],
+    url: GitHubProjectUrl(
+      url: 'https://github.com/martinloesethjensen/watched_app',
+    ),
+    icon: '🎬',
+    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'MVVM', 'Room'],
+  ),
+
+  Project(
     title: 'AltStore Source',
     description:
         'A personal AltStore source for distributing and sideloading iOS apps — no jailbreak required.',
