@@ -39,6 +39,11 @@ class Header extends StatelessComponent {
     css('.site-header').styles(
       position: .sticky(top: 0.px),
       backgroundColor: termTitlebar,
+      raw: {
+        'z-index': '100',
+        'transition': 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)',
+        'will-change': 'transform',
+      },
     ),
     css('.header-inner').styles(
       display: .flex,

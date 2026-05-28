@@ -1,3 +1,21 @@
+// Hide header on scroll down, reveal on scroll up
+(function () {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  var lastScrollY = window.scrollY;
+  var headerHeight = header.offsetHeight;
+
+  window.addEventListener('scroll', function () {
+    var currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY && currentScrollY > headerHeight) {
+      header.classList.add('header-hidden');
+    } else {
+      header.classList.remove('header-hidden');
+    }
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
   if (!('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(

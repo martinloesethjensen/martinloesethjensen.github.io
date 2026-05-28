@@ -60,12 +60,13 @@ class Projects extends StatelessComponent {
           span(classes: 'project-icon', [.text(project.icon)]),
           if (project.liveUrl != null)
             a(
-              href: project.liveUrl!,
+              href: project.liveUrl!.url,
               attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
               classes: 'project-play-btn',
-              [.text('🕹️ play')],
+              [.text('${project.liveUrl!.emoji} ${project.liveUrl!.label}')],
             ),
-          if (project.comingSoon) span(classes: 'project-badge', [.text('coming soon')]),
+          if (project.comingSoon)
+            span(classes: 'project-badge', [.text('coming soon')]),
         ]),
         div(classes: 'project-name-line prompt-line', [
           span(classes: 'proj-chevron', [.text('>')]),
@@ -74,25 +75,30 @@ class Projects extends StatelessComponent {
         p(classes: 'project-description', [.text(project.description)]),
         if (project.tags.isNotEmpty)
           div(classes: 'project-tags', [
-            for (final tag in project.tags) span(classes: 'project-tag', [.text(tag)]),
+            for (final tag in project.tags)
+              span(classes: 'project-tag', [.text(tag)]),
           ]),
         div(classes: 'project-card-footer', [
-          div(classes: 'project-lang', [
-            span(
-              classes: 'lang-dot',
-              styles: Styles(backgroundColor: Color(project.languageColor)),
-              [],
-            ),
-            span(classes: 'lang-label', [.text(project.language)]),
-          ]),
-          div(classes: 'project-card-actions', [
-            a(
-              href: project.url,
-              attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-              classes: 'project-link',
-              [.text('view on GitHub 🐙 →')],
-            ),
-          ]),
+          if (project.languages.isNotEmpty)
+            div(classes: 'project-lang', [
+              for (final language in project.languages) ...[
+                span(
+                  classes: 'lang-dot',
+                  styles: Styles(backgroundColor: Color(language.color)),
+                  [],
+                ),
+                span(classes: 'lang-label', [.text(language.name)]),
+              ],
+            ]),
+          if (project.url != null)
+            div(classes: 'project-card-actions', [
+              a(
+                href: project.url!.url,
+                attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
+                classes: 'project-link',
+                [.text('${project.url!.label} ${project.url!.emoji} →')],
+              ),
+            ]),
         ]),
       ]),
     ]);
