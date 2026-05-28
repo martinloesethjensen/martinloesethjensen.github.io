@@ -57,6 +57,11 @@ void main() {
                 'Senior Mobile Developer specializing in Flutter with 4+ years of experience building cross-platform apps.',
           },
         ),
+        // Animations: prefers-reduced-motion + scroll-reveal
+        link(href: 'animations.css', rel: 'stylesheet', type: 'text/css'),
+        // Responsive layout overrides
+        link(href: 'responsive.css', rel: 'stylesheet', type: 'text/css'),
+        script(src: 'animations.js'),
       ],
       meta: {
         'viewport': 'width=device-width, initial-scale=1.0',

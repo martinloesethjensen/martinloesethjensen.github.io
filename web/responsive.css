@@ -1,0 +1,88 @@
+/* ─── Tablet: 768px and below ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Tighten projects grid gap */
+  .projects-grid {
+    gap: 1rem;
+  }
+
+  /* Card hover lift disabled on touch — no hover on mobile */
+  .project-card:hover {
+    transform: none;
+    box-shadow: 0 4px 24px rgba(9, 13, 18, 0.6);
+  }
+}
+
+/* ─── Tablet: skills collapse to 1 column ─────────────────────────────── */
+@media (max-width: 520px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* ─── Mobile: 600px and below ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  /* Header: compress nav gap so brand + links fit on 375px */
+  .header-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .header-nav {
+    gap: 1rem;
+  }
+
+  /* Hero: less vertical breathing room */
+  .hero {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* Terminal: tighter horizontal padding on narrow screens */
+  .term-body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Name output: slightly smaller on mobile so it doesn't crowd */
+  .term-output--name {
+    font-size: 1.25rem;
+  }
+
+  /* CV wrap: less vertical spacing */
+  .cv-wrap {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
+  }
+
+  /* Projects page: less vertical padding */
+  .projects-page {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  /* Project cards: ensure full width on very small screens */
+  .project-card {
+    flex-basis: 100%;
+  }
+
+  /* Footer: tighter */
+  .site-footer {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* ─── Very small: 360px and below ─────────────────────────────────────── */
+@media (max-width: 360px) {
+  /* Brand name: hide on tiny screens, keep prompt symbol */
+  .header-brand-name {
+    display: none;
+  }
+
+  /* Terminal links: stack on tiny screens */
+  .term-links-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

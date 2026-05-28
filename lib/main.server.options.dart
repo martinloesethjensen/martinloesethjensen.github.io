@@ -28,11 +28,10 @@ import 'package:martin_portfolio/app.dart' as _app;
 /// ```
 ServerOptions get defaultServerOptions => ServerOptions(
   clientId: 'main.client.dart.js',
-
   styles: () => [
+    ..._app.App.styles,
     ..._header.Header.styles,
     ..._home.Home.styles,
     ..._projects.Projects.styles,
-    ..._app.App.styles,
   ],
 );

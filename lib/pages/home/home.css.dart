@@ -32,21 +32,50 @@ class HomeCss {
     css(
       '.cv-section',
     ).styles(display: .flex, flexDirection: .column, gap: Gap.all(1.25.rem)),
-    css(
-      '.section-title',
-    ).styles(color: termComment, fontSize: 0.875.rem, fontWeight: .w400),
+    // Subtle chapter break between sections
+    css('.cv-section + .cv-section').styles(
+      raw: {'border-top': '1px solid #253050'},
+    ),
+    css('.section-title').styles(
+      color: termComment,
+      fontSize: 1.rem,
+      fontWeight: .w500,
+      raw: {
+        'border-left': '2px solid #3ddc84',
+        'padding-left': '0.625rem',
+      },
+    ),
     css(
       '.section-content',
     ).styles(display: .flex, flexDirection: .column, gap: Gap.all(1.25.rem)),
     css('.cv-text').styles(color: termSubText, fontSize: 0.9375.rem),
 
+    // Scroll reveal — JS adds .will-reveal then .revealed
+    css('.will-reveal').styles(
+      raw: {
+        'opacity': '0',
+        'transform': 'translateY(14px)',
+        'transition':
+            'opacity 0.55s cubic-bezier(0.25, 1, 0.5, 1), transform 0.55s cubic-bezier(0.25, 1, 0.5, 1)',
+      },
+    ),
+    css('.revealed').styles(
+      raw: {'opacity': '1', 'transform': 'translateY(0)'},
+    ),
+
     // Experience / Education items
     css(
       '.exp-list',
     ).styles(display: .flex, flexDirection: .column, gap: Gap.all(2.rem)),
-    css(
-      '.exp-item',
-    ).styles(display: .flex, flexDirection: .column, gap: Gap.all(0.625.rem)),
+    css('.exp-item').styles(
+      display: .flex,
+      flexDirection: .column,
+      gap: Gap.all(0.625.rem),
+      raw: {'transition': 'box-shadow 0.2s ease'},
+    ),
+    css('.exp-item:hover').styles(
+      raw: {'box-shadow': '-2px 0 0 0 #3ddc84'},
+    ),
     css('.exp-header').styles(
       display: .flex,
       flexWrap: .wrap,
@@ -78,10 +107,14 @@ class HomeCss {
     ),
     css('.exp-bullets li').styles(color: termSubText, fontSize: 0.9375.rem),
 
-    // Skills
-    css(
-      '.skills-grid',
-    ).styles(display: .flex, flexDirection: .column, gap: Gap.all(1.25.rem)),
+    // Skills — 2-column grid; single column on mobile via responsive.css
+    css('.skills-grid').styles(
+      raw: {
+        'display': 'grid',
+        'grid-template-columns': 'repeat(2, 1fr)',
+        'gap': '1.25rem 2.5rem',
+      },
+    ),
     css(
       '.skill-group',
     ).styles(display: .flex, flexDirection: .column, gap: Gap.all(0.5.rem)),
@@ -100,6 +133,17 @@ class HomeCss {
       fontSize: 0.8125.rem,
       fontWeight: .w400,
       backgroundColor: tagBg,
+      raw: {
+        'transition':
+            'background-color 0.15s ease, color 0.15s ease, transform 0.15s ease',
+      },
+    ),
+    css('.skill-tag:hover').styles(
+      raw: {
+        'background-color': '#1e2f4a',
+        'color': '#56f09b',
+        'transform': 'translateY(-1px)',
+      },
     ),
   ];
 }

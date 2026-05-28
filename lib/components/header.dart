@@ -53,12 +53,18 @@ class Header extends StatelessComponent {
       alignItems: .center,
       textDecoration: TextDecoration(line: .none),
     ),
-    css(
-      '.header-prompt',
-    ).styles(color: termGreen, fontSize: 1.125.rem, fontWeight: .w700),
-    css(
-      '.header-brand-name',
-    ).styles(color: termText, fontSize: 1.rem, fontWeight: .w500),
+    css('.header-prompt').styles(
+      color: termGreen,
+      fontSize: 1.125.rem,
+      fontWeight: .w700,
+      raw: {'transition': 'color 0.15s ease'},
+    ),
+    css('.header-brand-name').styles(
+      color: termText,
+      fontSize: 1.rem,
+      fontWeight: .w500,
+      raw: {'transition': 'color 0.15s ease'},
+    ),
     css('.header-brand:hover .header-prompt').styles(color: termGreenBright),
     css(
       '.header-brand:hover .header-brand-name',
@@ -70,6 +76,7 @@ class Header extends StatelessComponent {
       fontSize: 0.875.rem,
       fontWeight: .w400,
       textDecoration: TextDecoration(line: .none),
+      raw: {'transition': 'color 0.15s ease'},
     ),
     css('.nav-link:hover').styles(color: termGreen),
     css('.nav-link--active').styles(color: termGreen, fontWeight: .w500),

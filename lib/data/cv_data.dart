@@ -9,10 +9,10 @@ const experiences = [
     location: 'Copenhagen',
     date: 'June 2023 – Dec 2025',
     bullets: [
-      'Implemented growth-focused features (subscriptions, custom theming, user journey) for the Hub charge point management system, a B2B Flutter Web App, within deadlines.',
-      'Led architectural quality through ADRs (Architecture Decision Records) defining testing standards and package semantic versioning policies.',
-      'Ensured code robustness by writing comprehensive unit/widget/integration tests for business-critical logic and actively contributing to the internal design system for UI components.',
-      'Collaborated cross-functionally with multiple Hub engineering teams to ensure seamless feature integration.',
+      'Shipped growth features (subscriptions, custom theming, user journey) for the Hub B2B Flutter Web App — charge point management at scale.',
+      'Led architecture quality via ADRs: defined testing standards and semantic versioning policies adopted across the team.',
+      'Wrote comprehensive unit, widget, and integration tests for business-critical logic; contributed components to the internal design system.',
+      'Worked cross-functionally with multiple Hub engineering teams to deliver seamless feature integration.',
     ],
   ),
   Experience(
@@ -30,8 +30,8 @@ const experiences = [
     location: 'Copenhagen',
     date: 'July 2022 – Apr 2023',
     bullets: [
-      'Delivered independent mobile development work within a small, fast-paced incubator team.',
-      'Spearheaded the implementation of the WEMA virtual clinic Flutter Mobile App (B2C) from inception until release, including writing a native plugin for video streaming.',
+      'Built the WEMA virtual clinic Flutter app (B2C) from zero to App Store release, including writing a native plugin for video streaming.',
+      'Operated as the sole mobile engineer in a fast-paced incubator team, owning the full mobile delivery.',
     ],
   ),
   Experience(

@@ -4,20 +4,36 @@ import '../theme.dart';
 
 class TerminalCss {
   static List<StyleRule> styles = <StyleRule>[
-    // Terminal window container
+    // Entrance keyframes
+    css.keyframes('fadeSlideUp', {
+      'from': Styles(raw: {'opacity': '0', 'transform': 'translateY(12px)'}),
+      'to': Styles(raw: {'opacity': '1', 'transform': 'translateY(0)'}),
+    }),
+    css.keyframes('fadeIn', {
+      'from': Styles(opacity: 0),
+      'to': Styles(opacity: 1),
+    }),
+
+    // Terminal window container — animates in as a whole first
     css('.term-window').styles(
       radius: .circular(8.px),
       overflow: Overflow.hidden,
       backgroundColor: termCard,
+      raw: {
+        'border': '1px solid #253050',
+        'box-shadow': '0 4px 24px rgba(9, 13, 18, 0.6)',
+        'animation': 'fadeSlideUp 0.5s cubic-bezier(0.25, 1, 0.5, 1) both',
+      },
     ),
 
-    // Title bar
+    // Title bar — 2px green accent line at top signals "active terminal"
     css('.term-titlebar').styles(
       display: .flex,
       padding: .symmetric(horizontal: 1.rem, vertical: 0.75.rem),
       alignItems: .center,
       gap: Gap.all(0.75.rem),
       backgroundColor: termTitlebar,
+      raw: {'border-top': '2px solid #3ddc84'},
     ),
     css(
       '.term-dots',
@@ -40,6 +56,35 @@ class TerminalCss {
       flexDirection: .column,
       gap: Gap.all(0.125.rem),
     ),
+
+    // Each body child fades in; stagger applied via nth-child below.
+    // Using opacity-only (no translateY) because .term-window clips overflow.
+    css('.term-body > *').styles(
+      raw: {
+        'opacity': '0',
+        'animation': 'fadeIn 0.35s cubic-bezier(0.25, 1, 0.5, 1) both',
+      },
+    ),
+    // Group 1: $ whoami + name
+    css('.term-body > *:nth-child(1)').styles(raw: {'animation-delay': '0.2s'}),
+    css('.term-body > *:nth-child(2)').styles(raw: {'animation-delay': '0.38s'}),
+    // Group 2: $ cat role.txt + role
+    css('.term-body > *:nth-child(3)').styles(raw: {'animation-delay': '0.54s'}),
+    css('.term-body > *:nth-child(4)').styles(raw: {'animation-delay': '0.7s'}),
+    // Group 3: $ cat contact.json
+    css('.term-body > *:nth-child(5)').styles(raw: {'animation-delay': '0.86s'}),
+    // JSON block lines — faster stagger
+    css('.term-body > *:nth-child(6)').styles(raw: {'animation-delay': '1.0s'}),
+    css('.term-body > *:nth-child(7)').styles(raw: {'animation-delay': '1.07s'}),
+    css('.term-body > *:nth-child(8)').styles(raw: {'animation-delay': '1.14s'}),
+    css('.term-body > *:nth-child(9)').styles(raw: {'animation-delay': '1.21s'}),
+    css('.term-body > *:nth-child(10)').styles(raw: {'animation-delay': '1.28s'}),
+    // Group 4: $ ls links/ + buttons
+    css('.term-body > *:nth-child(11)').styles(raw: {'animation-delay': '1.44s'}),
+    css('.term-body > *:nth-child(12)').styles(raw: {'animation-delay': '1.6s'}),
+    // Cursor line — last to appear
+    css('.term-body > *:nth-child(13)').styles(raw: {'animation-delay': '1.72s'}),
+
     css('.term-line').styles(
       display: .flex,
       padding: .only(top: 0.875.rem),
@@ -81,6 +126,7 @@ class TerminalCss {
     css('.term-str--link').styles(
       color: termYellow,
       textDecoration: TextDecoration(line: .none),
+      raw: {'transition': 'color 0.15s ease'},
     ),
     css('.term-str--link:hover').styles(color: termGreenBright),
 
@@ -101,12 +147,13 @@ class TerminalCss {
       fontWeight: .w500,
       textDecoration: TextDecoration(line: .none),
       backgroundColor: tagBg,
+      raw: {'transition': 'color 0.15s ease, background-color 0.15s ease'},
     ),
     css('.term-btn:hover').styles(color: termBg, backgroundColor: termGreen),
     css('.term-btn--dl').styles(color: termCyan),
     css('.term-btn--dl:hover').styles(color: termBg, backgroundColor: termCyan),
 
-    // Blinking cursor
+    // Blinking cursor — starts hidden; blink begins after all lines have appeared
     css.keyframes('blink', {
       '0%, 100%': Styles(opacity: 1),
       '50%': Styles(opacity: 0),
@@ -117,7 +164,8 @@ class TerminalCss {
       height: 1.125.rem,
       margin: .only(left: 0.25.rem),
       backgroundColor: termGreen,
-      raw: {'animation': 'blink 1s step-end infinite'},
+      opacity: 0,
+      raw: {'animation': 'blink 1s step-end 2.1s infinite'},
     ),
   ];
 }

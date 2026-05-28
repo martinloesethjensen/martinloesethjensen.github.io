@@ -34,14 +34,27 @@ class ProjectsCss {
       '.projects-grid',
     ).styles(display: .flex, flexWrap: .wrap, gap: Gap.all(1.5.rem)),
 
-    // Card
+    // Card — fluid: 3-col desktop, 2-col tablet, 1-col mobile
     css('.project-card').styles(
       display: .flex,
-      width: 340.px,
       radius: .circular(8.px),
       overflow: Overflow.hidden,
       flexDirection: .column,
       backgroundColor: termCard,
+      raw: {
+        'flex': '1 1 300px',
+        'min-width': '0',
+        'border': '1px solid #253050',
+        'box-shadow': '0 4px 24px rgba(9, 13, 18, 0.6)',
+        'transition':
+            'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease',
+      },
+    ),
+    css('.project-card:hover').styles(
+      raw: {
+        'transform': 'translateY(-3px)',
+        'box-shadow': '0 8px 32px rgba(9, 13, 18, 0.8), 0 0 0 1px #3ddc84',
+      },
     ),
 
     // Card title bar
@@ -51,6 +64,7 @@ class ProjectsCss {
       alignItems: .center,
       gap: Gap.all(0.625.rem),
       backgroundColor: termTitlebar,
+      raw: {'border-top': '2px solid #3ddc84'},
     ),
     css(
       '.card-dots',
@@ -147,6 +161,7 @@ class ProjectsCss {
       fontSize: 0.8125.rem,
       fontWeight: .w500,
       textDecoration: TextDecoration(line: .none),
+      raw: {'transition': 'color 0.15s ease'},
     ),
     css('.project-link:hover').styles(color: termGreenBright),
 
