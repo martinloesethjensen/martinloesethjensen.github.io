@@ -42,11 +42,13 @@ class Home extends StatelessComponent {
               href: 'https://linkedin.com/in/martinloesethjensen',
               type: TerminalSocialType.link,
             ),
+            /*
             TerminalSocial(
               text: '↓ CV.pdf',
               href: 'martin-jensen-cv.pdf',
               type: TerminalSocialType.download,
             ),
+            */
           ],
         ),
       ]),
@@ -59,9 +61,10 @@ class Home extends StatelessComponent {
       div(classes: 'section-content', [
         p(classes: 'cv-text', [
           .text(
-            'Experienced Flutter Developer, adept in all stages of app development with 4+ years of experience. '
-            'Proficient in various platforms and languages in software development. '
-            'Able to effectively self-manage during independent projects and collaborate as part of a productive team.',
+            'Flutter engineer, 5+ years in production. '
+            'Shipped cross-platform apps across health, EV charging, and media — '
+            'from writing a native video-streaming plugin at a startup to leading architecture decisions at a B2B scale-up. '
+            'Strong opinions on testing and architecture; I care about what happens to code after it ships.',
           ),
         ]),
       ]),
